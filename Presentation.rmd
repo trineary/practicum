@@ -1,0 +1,64 @@
+---
+title: "CS 5890 Practicum - R Presentation"
+author: "Patrick Neary"
+date: "September 10, 2015"
+output: ioslides_presentation
+---
+
+## R Markdown
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+R Markdown Reference guide can be found here: <https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf>
+
+## R Studio Environment
+
+![Install R software.](./Images/RStudioDevEnvironment.png)
+
+## Environment Main Screens
+
+- R files containing code (Upper left)
+- Console (Lower left)
+- Environment (Upper right)
+- Files/Plots (Lower right)
+
+
+## Packages in R
+What is a Package?
+
+- Bundled, self contained code that can be called from any project (like a dll)
+
+Where?
+
+- Packages can be stored in github or on local machines
+  + Blog on setting up github to host package: <http://www.r-bloggers.com/creating-your-personal-portable-r-code-library-with-github/>
+  + Blog on creating package to upload to github: <http://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/>
+
+
+
+## Slide with R Code and Output
+
+```{r}
+summary(cars)
+```
+
+## Slide with Plot
+
+Cheat sheet for visualization with ggplot2: <https://www.rstudio.com/wp-content/uploads/2015/08/ggplot2-cheatsheet.pdf>
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+## Other Useful References
+- Data Visualization cheat sheet: <https://www.rstudio.com/wp-content/uploads/2015/08/ggplot2-cheatsheet.pdf>
+- Data wrangling cheat sheet: <https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf>
+- RMarkdown cheat sheet: <https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf>
+- R Package cheat sheet: <https://www.rstudio.com/wp-content/uploads/2015/06/devtools-cheatsheet.pdf>
+- Coursera classes on R and data science <https://www.coursera.org/specializations/jhudatascience>
+- Online book about creating R Packages: <http://r-pkgs.had.co.nz/>
+- Another online book: <http://adv-r.had.co.nz/>
+- Single page, many useful links: <https://www.rstudio.com/resources/training/online-learning/#R>
+- Other built in functions in R: <http://www.statmethods.net/management/functions.html>
