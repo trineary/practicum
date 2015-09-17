@@ -43,31 +43,28 @@ Where?
 
 Going to show an example using the 'iris' data set, ggplot, and the multiplot function residing on github.
 
-```{r}
-  if (!require("yaml")) {
-    install.packages("yaml", repos="http://cran.rstudio.com/") 
-    library("yaml")
-  }
-  install.packages('devtools')
-  #library(devtools)
+```{r, echo=FALSE}
+  install.packages("ggplot2", repos = 'http://cran.us.r-project.org')
+  install.packages("devtools", repos = 'http://cran.us.r-project.org')
+  library(devtools)
+  library(ggplot2)
 
-  #install_github('trineary/multiplot','trineary')
-  #install.packages('ggplot2')
-  #library(ggplot2)
+  install_github('trineary/multiplot','trineary')
+  library(multiplot)
 
   # Load the iris data set
-  #data("iris")
-  #colnames(iris)
-  
-  # Store data into two variables
-  #p1 <- ggplot(aes(x=Sepal.Length), data=iris) +
-  #  geom_histogram(binwidth = 5, color = 'black', fill = '#099DD9')
+  data("iris")
 
-  #p2 <- ggplot(aes(x=Sepal.Length), data=iris) +
-  #  geom_histogram(binwidth = 3, color = 'blue', fill = '#099DD9')
+  # Store data into two variables
+  p1 <- ggplot(aes(x=Sepal.Length), data=iris) +
+    geom_histogram(binwidth = 5, color = 'black', fill = '#099DD9')
+
+  p2 <- ggplot(aes(x=Sepal.Length), data=iris) +
+    geom_histogram(binwidth = 3, color = 'blue', fill = '#099DD9')
 
   # Plot the data in a column using the multiplot Package we uploaded to github
-  #multiplot(p1, p2, cols=1)
+  multiplot(p1, p2, cols=1)
+  
 ```
 
 
