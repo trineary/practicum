@@ -7,6 +7,7 @@ output: ioslides_presentation
 
 ## R Markdown
 
+
 This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
@@ -40,17 +41,36 @@ Where?
 
 ## Slide with R Code and Output
 
+Going to show an example using the 'iris' data set, ggplot, and the multiplot function residing on github.
+
 ```{r}
-summary(cars)
+  if (!require("yaml")) {
+    install.packages("yaml", repos="http://cran.rstudio.com/") 
+    library("yaml")
+  }
+  install.packages('devtools')
+  #library(devtools)
+
+  #install_github('trineary/multiplot','trineary')
+  #install.packages('ggplot2')
+  #library(ggplot2)
+
+  # Load the iris data set
+  #data("iris")
+  #colnames(iris)
+  
+  # Store data into two variables
+  #p1 <- ggplot(aes(x=Sepal.Length), data=iris) +
+  #  geom_histogram(binwidth = 5, color = 'black', fill = '#099DD9')
+
+  #p2 <- ggplot(aes(x=Sepal.Length), data=iris) +
+  #  geom_histogram(binwidth = 3, color = 'blue', fill = '#099DD9')
+
+  # Plot the data in a column using the multiplot Package we uploaded to github
+  #multiplot(p1, p2, cols=1)
 ```
 
-## Slide with Plot
 
-Cheat sheet for visualization with ggplot2: <https://www.rstudio.com/wp-content/uploads/2015/08/ggplot2-cheatsheet.pdf>
-
-```{r, echo=FALSE}
-plot(cars)
-```
 
 ## Other Useful References
 - Data Visualization cheat sheet: <https://www.rstudio.com/wp-content/uploads/2015/08/ggplot2-cheatsheet.pdf>

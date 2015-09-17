@@ -40,5 +40,8 @@ The following screen shows the RStudio development environment.
 ![Install R software.](./Images/RStudioDevEnvironment.png)
 
 
+## Practicum Presentation Download
 
+My instructions, presentation and files are available on github.
 
+Github link for files: <https://github.com/trineary/practicum>
