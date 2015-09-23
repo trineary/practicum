@@ -2,7 +2,7 @@
 title: "CS 5890 Practicum - R Installation Instructions"
 author: "Patrick Neary"
 date: "September 24, 2015"
-output: ioslides_presentation
+output: slidy_presentation
 ---
 
 ## Install Overview

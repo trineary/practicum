@@ -1,26 +1,43 @@
 ---
 title: "Creating Pakages in R"
 author: "Patrick Neary"
-date: "August 4, 2015"
-output: html_document
+date: "September 24, 2015"
+output: slidy_presentation
 ---
 
-This document details how to create a package to upload to github.  The inspiration for this document is from the hilarypark link below.
+## Overview
 
-There is a great blog on how to create a package that can be uploaded to a GitHub account.  This is found here:
-<http://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/>
+This document details how to create a package to upload to github.  The inspiration for this document is from the following hilarypark link: <http://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/>
 
 There is another blog that discusses how to set up Git to receive this package: 
 <http://www.r-bloggers.com/creating-your-personal-portable-r-code-library-with-github/>
 
-It's time to learn to create and post my own R Scripts so I can reuse the code.  Several packages are necessary in order to do this.  The are:
 
-1 - devtools
-2 - roxygen2
+-----
+
+## Steps for creating R Packages
+
+1. Preliminary packages to install
+2. Create a directory for the R Package
+3. Add function/code
+4. Add documentation
+5. Process Documentation
+6. Run Install command
+7. Make GitHub repo
+8. Download and use repo in future projects
+
+-----
+
+## 1 - Preliminary packages to install
+
+Several packages are necessary in order for packaging code.  The are:
+
+1. devtools
+2. roxygen2
 
 These two packages are installed in the following code:
 
-```{r}
+```
 
 install.packages("Rcpp")
 install.packages("stringi")
@@ -32,33 +49,40 @@ library(roxygen2)
 
 ```
 
-Create a directory for the R Package
 
-```{r}
-# path.expand with the tilde gives path to the current users document directory
-basepath = dirname(path.expand("~"))
-# create a path string for an R package to go into
-rPackageDir = sprintf("%s/AppData/Roaming/R/Packages", basepath)
-# Create the actual path
-dir.create(rPackageDir, TRUE, TRUE, "0777")
-# Set working directory to the path just created
-setwd(rPackageDir)
-# Create folder for new Package called multiplot.  
-# This function creates the directory structure necessary for a Package
-devtools::create("multiplot")
+## 2 - Create a directory for the R Package
+
+The following code creates a directory in the users /AppData/Roaming/R for the package to go in.
+
+```
+  # path.expand with the tilde gives path to the current users document directory
+  basepath = dirname(path.expand("~"))
+  # create a path string for an R package to go into
+  rPackageDir = sprintf("%s/AppData/Roaming/R/Packages", basepath)
+  # Create the actual path
+  dir.create(rPackageDir, TRUE, TRUE, "0777")
+  # Set working directory to the path just created
+  setwd(rPackageDir)
+  # Create folder for new Package called multiplot.  
+  # This function creates the directory structure necessary for a Package
+  devtools::create("multiplot")
 ```
 
-2 - Add function:
+-----
+
+## 3 - Add function and code
 
 Create a .r script file that will contain the desired function.  These functions can be either grouped one per file or multiple functions can exist in the same file. This function should go in the 'R' subdirectory in the folder created in 1.
 
-I found a useful file on the Internet called multiplot.r.  It allows for easy viewing plots in the same screen.
+I found a useful file on the Internet called multiplot.r.  It allows for easy viewing plots in the same screen.  This code is available on github here: <https://github.com/trineary/practicum>
 
+-----
 
-3 - Add documentation
+## 4 - Add documentation
 
 Each function will need a header before the function in the following format:
 
+```
  
 #' A Cat Function
 #'
@@ -75,39 +99,49 @@ cat_function <- function(love=TRUE){
     }
 }
 
-4 - Process Documentation
+```
+
+## 5 - Process Documentation
 
 To process the documentation, change working directory and then run the 'document' command.
 
-```{r}
-# Set the multiplot directory as working directory
-setwd('./multiplot')
-# Generate documentation
-document()
 ```
 
+  # Set the multiplot directory as working directory
+  setwd('./multiplot')
+  # Generate documentation
+  document()
 
-5 - Install
+```
+
+-----
+
+## 6 - Run Install command
 
 
-```{r}
+```
 setwd('..')
 install("multiplot")
 ```
 
-6 - Make GitHub repo
+-----
+
+## 7 - Make GitHub repo
 
 - Blog on setting up github to host package: <http://www.r-bloggers.com/creating-your-personal-portable-r-code-library-with-github/>
 
-7 - Download and use repo in future projects
+
+-----
+
+## 8 - Download and use repo in future projects
 
 The following command allows an automatic download and use of the repo:
 
-```{r}
+```
 install_github('trineary/multiplot','trineary')
 
 ```
 
 
-Setting up GitHub to house the Package created above:
+Setting up GitHub to house the Package created above: <http://www.r-bloggers.com/creating-your-personal-portable-r-code-library-with-github/>
 
